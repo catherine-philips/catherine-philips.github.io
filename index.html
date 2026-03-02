@@ -9,14 +9,14 @@
   :root {
     --wine: #722F37;
     --wine-dark: #4a1e24;
-    --wine-light: #9b3d47;
+    --wine-light: #c45c6a;
     --crimson: #A0001C;
     --black: #0D0D0D;
     --black2: #141414;
     --black3: #1a1a1a;
     --off-white: #F5F0EB;
-    --warm-gray: #c8c0b8;
-    --mid-gray: #6b6560;
+    --warm-gray: #ddd8d2;
+    --mid-gray: #a09890;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,8 +30,6 @@
     overflow-x: hidden;
   }
 
-
-
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
@@ -39,9 +37,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.6rem 4rem;
-    background: rgba(13,13,13,0.88);
+    background: rgba(13,13,13,0.92);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(114,47,55,0.2);
+    border-bottom: 1px solid rgba(114,47,55,0.3);
     overflow: visible;
   }
   .nav-logo {
@@ -107,7 +105,7 @@
   h1.hero-name span { color: var(--wine-light); font-style: italic; }
   .hero-desc {
     max-width: 480px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     line-height: 1.9;
     color: var(--warm-gray);
     margin-bottom: 3rem;
@@ -139,7 +137,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    border: 1px solid rgba(200,192,184,0.3);
+    border: 1px solid rgba(200,192,184,0.4);
     transition: border-color 0.3s, color 0.3s;
   }
   .btn-outline:hover { border-color: var(--wine-light); color: var(--wine-light); }
@@ -157,10 +155,9 @@
   }
   .stat-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid-gray); }
 
-
   section { padding: 8rem 4rem; }
   .section-label {
-    font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+    font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
     color: var(--wine-light); margin-bottom: 1rem;
     display: flex; align-items: center; gap: 1rem;
   }
@@ -174,12 +171,12 @@
   /* ABOUT */
   #about { background: var(--black2); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-  .about-text p { font-size: 0.82rem; line-height: 2; color: var(--warm-gray); margin-bottom: 1.5rem; }
+  .about-text p { font-size: 0.86rem; line-height: 2; color: var(--warm-gray); margin-bottom: 1.5rem; }
   .about-text p strong { color: var(--off-white); font-weight: 400; }
   .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .skill-cat-name { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-light); margin-bottom: 0.8rem; }
+  .skill-cat-name { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-light); margin-bottom: 0.8rem; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .skill-tag { font-size: 0.65rem; padding: 0.25rem 0.6rem; border: 1px solid rgba(114,47,55,0.4); color: var(--warm-gray); }
+  .skill-tag { font-size: 0.68rem; padding: 0.3rem 0.7rem; border: 1px solid rgba(114,47,55,0.5); color: var(--warm-gray); }
 
   /* EXPERIENCE */
   #experience { background: var(--black); }
@@ -191,97 +188,100 @@
   .timeline-item {
     position: relative; margin-bottom: 4rem;
     opacity: 1; transform: translateX(0);
-    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .timeline-item.visible { opacity: 1; transform: translateX(0); }
   .timeline-dot { position: absolute; left: -2.4rem; top: 0.3rem; width: 8px; height: 8px; background: var(--wine); border-radius: 50%; }
-  .timeline-date { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--wine-light); text-transform: uppercase; margin-bottom: 0.5rem; }
-  .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.2rem; }
-  .timeline-company { font-size: 0.7rem; color: var(--mid-gray); letter-spacing: 0.1em; margin-bottom: 1rem; }
-  .timeline-desc { font-size: 0.75rem; line-height: 1.9; color: var(--warm-gray); }
+  .timeline-date { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--wine-light); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 0.2rem; }
+  .timeline-company { font-size: 0.72rem; color: var(--mid-gray); letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .timeline-desc { font-size: 0.8rem; line-height: 2; color: var(--warm-gray); }
   .timeline-desc strong { color: var(--off-white); font-weight: 400; }
 
   /* PROJECTS */
   #projects { background: var(--black2); }
   .projects-block { margin-bottom: 5rem; }
   .projects-sublabel {
-    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--mid-gray); margin-bottom: 1.5rem;
     padding-bottom: 1rem; border-bottom: 1px solid rgba(114,47,55,0.25);
     display: flex; align-items: center; gap: 0.8rem;
   }
-  .projects-sublabel span { color: var(--wine-light); font-size: 0.65rem; }
+  .projects-sublabel span { color: var(--wine-light); font-size: 0.68rem; }
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; }
   .project-card {
     background: var(--black3); padding: 2.5rem;
-    border: 1px solid rgba(114,47,55,0.15);
+    border: 1px solid rgba(114,47,55,0.2);
     position: relative; overflow: hidden;
     opacity: 1; transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s;
+    transition: border-color 0.3s;
   }
-  .project-card.academic { background: rgba(114,47,55,0.04); }
-  .project-card.visible { opacity: 1; transform: translateY(0); }
-  .project-card:hover { border-color: rgba(114,47,55,0.6); }
+  .project-card.academic { background: rgba(114,47,55,0.05); }
+  .project-card:hover { border-color: rgba(114,47,55,0.7); }
   .project-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: var(--wine); transform: scaleX(0); transform-origin: left;
     transition: transform 0.4s ease;
   }
   .project-card:hover::before { transform: scaleX(1); }
-  .project-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(245,240,235,0.15); line-height: 1; margin-bottom: 1rem; }
-  .project-card.academic .project-num { color: rgba(245,240,235,0.15); }
+  .project-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(245,240,235,0.12); line-height: 1; margin-bottom: 1rem; }
   .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.8rem; line-height: 1.2; }
-  .project-desc { font-size: 0.72rem; line-height: 1.9; color: var(--warm-gray); margin-bottom: 1.5rem; }
+  .project-desc { font-size: 0.78rem; line-height: 2; color: var(--warm-gray); margin-bottom: 1.5rem; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .project-tag { font-size: 0.6rem; padding: 0.2rem 0.5rem; background: rgba(114,47,55,0.15); color: var(--wine-light); }
+  .project-tag { font-size: 0.63rem; padding: 0.25rem 0.55rem; background: rgba(114,47,55,0.18); color: var(--wine-light); }
+  .project-github {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 1.2rem;
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mid-gray); text-decoration: none;
+    border-bottom: 1px solid rgba(114,47,55,0.3);
+    padding-bottom: 0.15rem;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .project-github:hover { color: var(--wine-light); border-color: var(--wine-light); }
 
   /* EDUCATION */
   #education { background: var(--black); }
   .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
   .edu-card {
-    padding: 2rem 2.5rem; border: 1px solid rgba(114,47,55,0.15);
+    padding: 2rem 2.5rem; border: 1px solid rgba(114,47,55,0.2);
     opacity: 1; transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .edu-card.visible { opacity: 1; transform: translateY(0); }
-  .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; margin-bottom: 0.4rem; }
-  .edu-school { font-size: 0.7rem; color: var(--wine-light); letter-spacing: 0.08em; margin-bottom: 0.2rem; }
-  .edu-year { font-size: 0.65rem; color: var(--mid-gray); }
+  .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 0.4rem; }
+  .edu-school { font-size: 0.72rem; color: var(--wine-light); letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+  .edu-year { font-size: 0.68rem; color: var(--mid-gray); }
 
   /* CERTIFICATIONS */
   #certifications { background: var(--black2); }
   .cert-list { display: flex; flex-wrap: wrap; gap: 1rem; }
   .cert-item {
-    padding: 1rem 1.5rem; border: 1px solid rgba(114,47,55,0.3);
-    font-size: 0.72rem; color: var(--warm-gray);
+    padding: 1rem 1.5rem; border: 1px solid rgba(114,47,55,0.35);
+    font-size: 0.75rem; color: var(--warm-gray);
     opacity: 1; transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, color 0.3s;
+    transition: border-color 0.3s, color 0.3s;
   }
-  .cert-item.visible { opacity: 1; transform: translateY(0); }
   .cert-item:hover { border-color: var(--wine-light); color: var(--off-white); }
 
   /* CONTACT */
   #contact { background: var(--black); }
   .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
-  .contact-info p { font-size: 0.8rem; line-height: 2; color: var(--warm-gray); margin-bottom: 2rem; }
+  .contact-info p { font-size: 0.84rem; line-height: 2; color: var(--warm-gray); margin-bottom: 2rem; }
   .contact-links { display: flex; flex-direction: column; }
   .contact-link {
     display: flex; align-items: center; gap: 1rem;
     color: var(--warm-gray); text-decoration: none;
-    font-size: 0.72rem; padding: 1rem 0;
+    font-size: 0.75rem; padding: 1rem 0;
     border-bottom: 1px solid rgba(114,47,55,0.2);
     transition: color 0.3s;
   }
   .contact-link:hover { color: var(--wine-light); }
-  .contact-link-label { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-light); width: 65px; flex-shrink: 0; }
+  .contact-link-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-light); width: 65px; flex-shrink: 0; }
 
   footer {
     padding: 2rem 4rem; background: var(--wine-dark);
     display: flex; justify-content: space-between; align-items: center;
     border-top: 1px solid rgba(114,47,55,0.4);
   }
-  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(245,240,235,0.8); }
-  footer p { font-size: 0.65rem; color: rgba(245,240,235,0.5); letter-spacing: 0.1em; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(245,240,235,0.9); }
+  footer p { font-size: 0.68rem; color: rgba(245,240,235,0.6); letter-spacing: 0.1em; }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -327,7 +327,6 @@
     <div class="stat"><div class="stat-num">2</div><div class="stat-label">Years Experience</div></div>
     <div class="stat"><div class="stat-num">2.1M</div><div class="stat-label">Records Analysed</div></div>
   </div>
-
 </section>
 
 <section id="about">
@@ -371,34 +370,34 @@
   </div>
 </section>
 
-
 <!-- HOW I BUILD -->
 <section id="how-i-build" style="background:var(--black);">
   <div class="section-label">02 — How I Work</div>
   <h2 class="section-title">From Requirements<br><em>To Working Product</em></h2>
   <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:2px;">
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.15); position:relative;">
+    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
       <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">01</div>
-      <div style="font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Understand the Problem</div>
-      <p style="font-size:0.72rem; line-height:1.9; color:var(--warm-gray);">I start with stakeholders, not models. What does success look like for the business? What does the user actually need? Getting this right determines everything downstream.</p>
+      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Understand the Problem</div>
+      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">I start with stakeholders, not models. What does success look like for the business? What does the user actually need? Getting this right determines everything downstream.</p>
     </div>
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.15); position:relative;">
+    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
       <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">02</div>
-      <div style="font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Build the Right Thing</div>
-      <p style="font-size:0.72rem; line-height:1.9; color:var(--warm-gray);">Translate requirements into an AI solution using the right tools — LLMs, RAG, CV, or a combination. I use Claude and ChatGPT to prototype fast and iterate with intent.</p>
+      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Build the Right Thing</div>
+      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">Translate requirements into an AI solution using the right tools — LLMs, RAG, CV, or a combination. I use Claude and ChatGPT to prototype fast and iterate with intent.</p>
     </div>
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.15); position:relative;">
+    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
       <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">03</div>
-      <div style="font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Test Until It Breaks</div>
-      <p style="font-size:0.72rem; line-height:1.9; color:var(--warm-gray);">I enjoy finding edge cases — the inputs that break assumptions, the user behaviours no one planned for. Structured testing and prompt stress-testing are part of how I ship with confidence.</p>
+      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Test Until It Breaks</div>
+      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">I enjoy finding edge cases — the inputs that break assumptions, the user behaviours no one planned for. Structured testing and prompt stress-testing are part of how I ship with confidence.</p>
     </div>
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.15); position:relative;">
+    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
       <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">04</div>
-      <div style="font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Ship & Improve</div>
-      <p style="font-size:0.72rem; line-height:1.9; color:var(--warm-gray);">The best part is watching it work. I stay close to users post-launch — tracking adoption, gathering feedback, and refining until the product actually solves the problem it was built for.</p>
+      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Ship & Improve</div>
+      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">The best part is watching it work. I stay close to users post-launch — tracking adoption, gathering feedback, and refining until the product actually solves the problem it was built for.</p>
     </div>
   </div>
 </section>
+
 <section id="experience" style="background:var(--black);">
   <div class="section-label">03 — Experience</div>
   <h2 class="section-title">Where I've<br><em>Made an Impact</em></h2>
@@ -420,7 +419,7 @@
       <div class="timeline-title">Data Science Intern</div>
       <div class="timeline-company">GITAA</div>
       <div class="timeline-desc">
-        Performed unsupervised NLP clustering on religious texts to surface latent themes.<br><br> Built gesture recognition models using PyTorch and CNNs (AlexNet, ResNet) for real-time classification.
+        Performed unsupervised NLP clustering on religious texts to surface latent themes.<br><br>Built gesture recognition models using PyTorch and CNNs (AlexNet, ResNet) for real-time classification.
       </div>
     </div>
   </div>
@@ -441,112 +440,61 @@
           <span class="project-tag">Python</span><span class="project-tag">InsightFace</span><span class="project-tag">Gemini API</span><span class="project-tag">OpenAI</span><span class="project-tag">MySQL</span>
         </div>
         <div style="margin-top:2rem; padding:1.2rem 1rem; background:rgba(0,0,0,0.4); border:1px solid rgba(114,47,55,0.2); overflow:visible;">
-          <div style="color:var(--wine-light); margin-bottom:1rem; letter-spacing:0.15em; font-size:0.58rem; text-transform:uppercase; font-family:'DM Mono',monospace;">System Architecture</div>
+          <div style="color:var(--wine-light); margin-bottom:1rem; letter-spacing:0.15em; font-size:0.6rem; text-transform:uppercase; font-family:'DM Mono',monospace;">System Architecture</div>
           <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block; overflow:visible;">
             <defs>
               <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
                 <path d="M0,0 L0,6 L7,3 z" fill="#722F37"/>
               </marker>
             </defs>
-
-            <!-- ── TRACK LABELS ── -->
-            <text x="10" y="14" fill="#6b6560" font-family="DM Mono,monospace" font-size="6" letter-spacing="1">IMAGE TRACK</text>
-            <text x="10" y="140" fill="#6b6560" font-family="DM Mono,monospace" font-size="6" letter-spacing="1">VIDEO TRACK</text>
-
-            <!-- ═══════════════ IMAGE TRACK (y≈20) ═══════════════ -->
-
-            <!-- Image Ingestion -->
+            <text x="10" y="14" fill="#a09890" font-family="DM Mono,monospace" font-size="6" letter-spacing="1">IMAGE TRACK</text>
+            <text x="10" y="140" fill="#a09890" font-family="DM Mono,monospace" font-size="6" letter-spacing="1">VIDEO TRACK</text>
             <rect x="2" y="20" width="100" height="36" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="52" y="34" text-anchor="middle" fill="#c8c0b8" font-family="DM Mono,monospace" font-size="7">Image Ingestion</text>
-            <text x="52" y="47" text-anchor="middle" fill="#6b6560" font-family="DM Mono,monospace" font-size="6">3,500+ images</text>
-
-            <!-- → -->
+            <text x="52" y="34" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Image Ingestion</text>
+            <text x="52" y="47" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">3,500+ images</text>
             <line x1="103" y1="38" x2="120" y2="38" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- InsightFace CV -->
-            <rect x="122" y="20" width="105" height="36" rx="4" fill="rgba(114,47,55,0.12)" stroke="rgba(114,47,55,0.6)" stroke-width="1"/>
-            <text x="174" y="34" text-anchor="middle" fill="#c8c0b8" font-family="DM Mono,monospace" font-size="7">InsightFace CV</text>
-            <text x="174" y="47" text-anchor="middle" fill="#9b3d47" font-family="DM Mono,monospace" font-size="6">Fine-tuned · 98% acc.</text>
-
-            <!-- → -->
+            <rect x="122" y="20" width="105" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
+            <text x="174" y="34" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">InsightFace CV</text>
+            <text x="174" y="47" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">Fine-tuned · 98% acc.</text>
             <line x1="228" y1="38" x2="245" y2="38" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- Player Tags -->
-            <rect x="247" y="20" width="100" height="36" rx="4" fill="rgba(114,47,55,0.12)" stroke="rgba(114,47,55,0.6)" stroke-width="1"/>
+            <rect x="247" y="20" width="100" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
             <text x="297" y="34" text-anchor="middle" fill="#F5F0EB" font-family="DM Mono,monospace" font-size="7">Player Tags</text>
-            <text x="297" y="47" text-anchor="middle" fill="#9b3d47" font-family="DM Mono,monospace" font-size="6">20 categories</text>
-
-            <!-- → to Gemini -->
+            <text x="297" y="47" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">20 categories</text>
             <line x1="348" y1="38" x2="365" y2="38" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- ═══════════════ VIDEO TRACK (y≈148) ═══════════════ -->
-
-            <!-- Video Ingestion -->
             <rect x="2" y="148" width="100" height="36" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="52" y="162" text-anchor="middle" fill="#c8c0b8" font-family="DM Mono,monospace" font-size="7">Video Ingestion</text>
-            <text x="52" y="175" text-anchor="middle" fill="#6b6560" font-family="DM Mono,monospace" font-size="6">raw footage</text>
-
-            <!-- → -->
+            <text x="52" y="162" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Video Ingestion</text>
+            <text x="52" y="175" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">raw footage</text>
             <line x1="103" y1="166" x2="120" y2="166" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- Whisper -->
-            <rect x="122" y="148" width="105" height="36" rx="4" fill="rgba(114,47,55,0.12)" stroke="rgba(114,47,55,0.6)" stroke-width="1"/>
-            <text x="174" y="162" text-anchor="middle" fill="#c8c0b8" font-family="DM Mono,monospace" font-size="7">Whisper ASR</text>
-            <text x="174" y="175" text-anchor="middle" fill="#9b3d47" font-family="DM Mono,monospace" font-size="6">Transcription</text>
-
-            <!-- → -->
+            <rect x="122" y="148" width="105" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
+            <text x="174" y="162" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Whisper ASR</text>
+            <text x="174" y="175" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">Transcription</text>
             <line x1="228" y1="166" x2="245" y2="166" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- Frame Sampling -->
-            <rect x="247" y="148" width="100" height="36" rx="4" fill="rgba(114,47,55,0.12)" stroke="rgba(114,47,55,0.6)" stroke-width="1"/>
-            <text x="297" y="162" text-anchor="middle" fill="#c8c0b8" font-family="DM Mono,monospace" font-size="7">Frame Sampling</text>
-            <text x="297" y="175" text-anchor="middle" fill="#9b3d47" font-family="DM Mono,monospace" font-size="6">Visual context</text>
-
-            <!-- → to Gemini -->
+            <rect x="247" y="148" width="100" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
+            <text x="297" y="162" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Frame Sampling</text>
+            <text x="297" y="175" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">Visual context</text>
             <line x1="348" y1="166" x2="365" y2="166" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- ═══════════════ GEMINI (centre, spanning both tracks) ═══════════════ -->
-            <rect x="367" y="72" width="108" height="58" rx="4" fill="rgba(114,47,55,0.18)" stroke="#722F37" stroke-width="1.2"/>
+            <rect x="367" y="72" width="108" height="58" rx="4" fill="rgba(114,47,55,0.22)" stroke="#722F37" stroke-width="1.5"/>
             <text x="421" y="90" text-anchor="middle" fill="#F5F0EB" font-family="DM Mono,monospace" font-size="7.5" font-weight="400">Gemini API</text>
-            <text x="421" y="104" text-anchor="middle" fill="#9b3d47" font-family="DM Mono,monospace" font-size="6.5">Multi-label</text>
-            <text x="421" y="117" text-anchor="middle" fill="#9b3d47" font-family="DM Mono,monospace" font-size="6.5">Semantic Tags</text>
-
-            <!-- image track arrow curves down to Gemini left-centre -->
+            <text x="421" y="104" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6.5">Multi-label</text>
+            <text x="421" y="117" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6.5">Semantic Tags</text>
             <path d="M365,38 Q390,38 390,72" fill="none" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <!-- video track arrow curves up to Gemini left-centre -->
             <path d="M365,166 Q390,166 390,130" fill="none" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- Gemini → MySQL -->
             <line x1="476" y1="101" x2="493" y2="101" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- ═══════════════ MySQL + Search + UI ═══════════════ -->
-
-            <!-- MySQL -->
             <rect x="495" y="72" width="40" height="58" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="515" y="97" text-anchor="middle" fill="#c8c0b8" font-family="DM Mono,monospace" font-size="6.5">MySQL</text>
-            <text x="515" y="110" text-anchor="middle" fill="#6b6560" font-family="DM Mono,monospace" font-size="6">Index</text>
-
-            <!-- MySQL → down to Search API -->
+            <text x="515" y="97" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="6.5">MySQL</text>
+            <text x="515" y="110" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">Index</text>
             <line x1="515" y1="131" x2="515" y2="168" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- Search API -->
             <rect x="474" y="170" width="82" height="38" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="515" y="186" text-anchor="middle" fill="#c8c0b8" font-family="DM Mono,monospace" font-size="7">Search API</text>
-            <text x="515" y="200" text-anchor="middle" fill="#6b6560" font-family="DM Mono,monospace" font-size="6">Query interface</text>
-
-            <!-- Search API → Content UI -->
+            <text x="515" y="186" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Search API</text>
+            <text x="515" y="200" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">Query interface</text>
             <line x1="515" y1="209" x2="515" y2="228" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-
-            <!-- Content Team UI -->
-            <rect x="464" y="230" width="102" height="42" rx="4" fill="rgba(114,47,55,0.22)" stroke="#722F37" stroke-width="1.5"/>
+            <rect x="464" y="230" width="102" height="42" rx="4" fill="rgba(114,47,55,0.25)" stroke="#722F37" stroke-width="1.5"/>
             <text x="515" y="248" text-anchor="middle" fill="#F5F0EB" font-family="DM Mono,monospace" font-size="7" font-weight="400">Content Team UI</text>
-            <text x="515" y="263" text-anchor="middle" fill="#9b3d47" font-family="DM Mono,monospace" font-size="6">100+ searches/day</text>
-
-            <!-- Legend -->
-            <rect x="10" y="285" width="9" height="9" rx="2" fill="rgba(114,47,55,0.12)" stroke="rgba(114,47,55,0.6)" stroke-width="1"/>
-            <text x="23" y="294" fill="#6b6560" font-family="DM Mono,monospace" font-size="6">AI component</text>
+            <text x="515" y="263" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">100+ searches/day</text>
+            <rect x="10" y="285" width="9" height="9" rx="2" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
+            <text x="23" y="294" fill="#a09890" font-family="DM Mono,monospace" font-size="6">AI component</text>
             <rect x="105" y="285" width="9" height="9" rx="2" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="118" y="294" fill="#6b6560" font-family="DM Mono,monospace" font-size="6">Data / infra</text>
+            <text x="118" y="294" fill="#a09890" font-family="DM Mono,monospace" font-size="6">Data / infra</text>
           </svg>
         </div>
       </div>
@@ -586,8 +534,8 @@
         <div class="project-desc">Master's thesis at Liverpool Hope University. Recommender using Self-Organizing Maps to cluster songs by audio features with cosine similarity, delivered as a user-facing interface via Spotify API data.</div>
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">SOM</span><span class="project-tag">Spotify API</span><span class="project-tag">ML</span>
-	
         </div>
+        <a href="https://github.com/catherine-philips/Music-Recommender" target="_blank" class="project-github">↗ View on GitHub</a>
       </div>
       <div class="project-card academic">
         <div class="project-num">02</div>
@@ -596,6 +544,7 @@
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span class="project-tag">Classification</span>
         </div>
+        <a href="https://github.com/catherine-philips/Bank-Marketing" target="_blank" class="project-github">↗ View on GitHub</a>
       </div>
       <div class="project-card academic">
         <div class="project-num">03</div>
@@ -603,8 +552,8 @@
         <div class="project-desc">Predicted employee attrition on a 15,000-record HR dataset using Logistic Regression, KNN, and Random Forest. Identified key churn drivers and proposed data-backed retention strategies.</div>
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span class="project-tag">HR Analytics</span>
-	
         </div>
+        <a href="https://github.com/catherine-philips/HR-Analytics" target="_blank" class="project-github">↗ View on GitHub</a>
       </div>
     </div>
   </div>
@@ -629,7 +578,7 @@
       <div class="edu-school">Women's Christian College, Chennai</div>
       <div class="edu-year">April 2021</div>
     </div>
-    <div class="edu-card" style="border-color:rgba(114,47,55,0.35); background:rgba(114,47,55,0.06);">
+    <div class="edu-card" style="border-color:rgba(114,47,55,0.4); background:rgba(114,47,55,0.07);">
       <div class="edu-degree" style="font-style:italic; color:var(--wine-light);">Department Award for General Proficiency</div>
       <div class="edu-school">Women's Christian College, Chennai</div>
       <div class="edu-year">Academic Excellence Award</div>
@@ -659,7 +608,6 @@
         <a href="#" id="email-link" class="contact-link">
           <span class="contact-link-label">Email</span><span id="email-text"></span>
         </a>
-        </a>
         <a href="tel:+919025990319" class="contact-link">
           <span class="contact-link-label">Phone</span>+91 90259 90319
         </a>
@@ -674,7 +622,7 @@
     <div>
       <div class="section-label" style="margin-bottom:1.5rem">Currently Based In</div>
       <p style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; line-height:1.2; margin-bottom:2rem">Chennai,<br><span style="color:var(--wine-light);font-style:italic">India</span></p>
-      <p style="font-size:0.72rem; line-height:1.9; color:var(--mid-gray)">Open to remote, hybrid, or relocation opportunities globally. Available to connect for the right role or collaboration.</p>
+      <p style="font-size:0.78rem; line-height:2; color:var(--mid-gray)">Open to remote, hybrid, or relocation opportunities globally. Available to connect for the right role or collaboration.</p>
     </div>
   </div>
 </section>
@@ -684,7 +632,6 @@
   <p>Applied AI Developer · LLMs · RAG · Chennai, India</p>
 </footer>
 
-</body>
 <script>
   const u = 'cathy.philips247';
   const d = 'gmail.com';
@@ -693,4 +640,5 @@
   el.href = 'mailto:' + u + '@' + d;
   txt.textContent = u + '@' + d;
 </script>
+</body>
 </html>
