@@ -30,6 +30,7 @@
     overflow-x: hidden;
   }
 
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
@@ -40,7 +41,6 @@
     background: rgba(13,13,13,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(114,47,55,0.3);
-    overflow: visible;
   }
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
@@ -61,6 +61,7 @@
   }
   .nav-links a:hover { color: var(--wine-light); }
 
+  /* HERO */
   #hero {
     min-height: 100vh;
     display: flex;
@@ -155,6 +156,7 @@
   }
   .stat-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid-gray); }
 
+  /* SECTIONS */
   section { padding: 8rem 4rem; }
   .section-label {
     font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
@@ -178,6 +180,13 @@
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .skill-tag { font-size: 0.68rem; padding: 0.3rem 0.7rem; border: 1px solid rgba(114,47,55,0.5); color: var(--warm-gray); }
 
+  /* HOW I WORK */
+  .how-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+  .how-card { padding: 2.5rem 2rem; border: 1px solid rgba(114,47,55,0.2); position: relative; }
+  .how-num { font-family: 'Cormorant Garamond',serif; font-size: 4rem; font-weight: 300; color: #fff; line-height: 1; margin-bottom: 1.5rem; }
+  .how-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-light); margin-bottom: 0.8rem; }
+  .how-card p { font-size: 0.78rem; line-height: 2; color: var(--warm-gray); }
+
   /* EXPERIENCE */
   #experience { background: var(--black); }
   .timeline { position: relative; padding-left: 2rem; }
@@ -185,16 +194,22 @@
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
     width: 1px; background: linear-gradient(to bottom, var(--wine), transparent);
   }
-  .timeline-item {
-    position: relative; margin-bottom: 4rem;
-    opacity: 1; transform: translateX(0);
-  }
+  .timeline-item { position: relative; margin-bottom: 4rem; }
   .timeline-dot { position: absolute; left: -2.4rem; top: 0.3rem; width: 8px; height: 8px; background: var(--wine); border-radius: 50%; }
   .timeline-date { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--wine-light); text-transform: uppercase; margin-bottom: 0.5rem; }
   .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 0.2rem; }
-  .timeline-company { font-size: 0.72rem; color: var(--mid-gray); letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .timeline-company { font-size: 0.72rem; color: var(--mid-gray); letter-spacing: 0.1em; margin-bottom: 1.2rem; }
   .timeline-desc { font-size: 0.8rem; line-height: 2; color: var(--warm-gray); }
   .timeline-desc strong { color: var(--off-white); font-weight: 400; }
+  .timeline-projects { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.2rem; }
+  .timeline-project {
+    padding: 1.2rem 1.5rem;
+    border-left: 2px solid rgba(114,47,55,0.5);
+    background: rgba(114,47,55,0.05);
+  }
+  .timeline-project-name { font-size: 0.72rem; letter-spacing: 0.1em; color: var(--wine-light); text-transform: uppercase; margin-bottom: 0.4rem; }
+  .timeline-project p { font-size: 0.78rem; line-height: 1.9; color: var(--warm-gray); }
+  .timeline-project p strong { color: var(--off-white); font-weight: 400; }
 
   /* PROJECTS */
   #projects { background: var(--black2); }
@@ -211,7 +226,6 @@
     background: var(--black3); padding: 2.5rem;
     border: 1px solid rgba(114,47,55,0.2);
     position: relative; overflow: hidden;
-    opacity: 1; transform: translateY(0);
     transition: border-color 0.3s;
   }
   .project-card.academic { background: rgba(114,47,55,0.05); }
@@ -222,9 +236,10 @@
     transition: transform 0.4s ease;
   }
   .project-card:hover::before { transform: scaleX(1); }
-  .project-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgb(255,255,255); line-height: 1; margin-bottom: 1rem; }
+  .project-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; line-height: 1; margin-bottom: 1rem; }
   .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.8rem; line-height: 1.2; }
   .project-desc { font-size: 0.78rem; line-height: 2; color: var(--warm-gray); margin-bottom: 1.5rem; }
+  .project-desc strong { color: var(--off-white); font-weight: 400; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .project-tag { font-size: 0.63rem; padding: 0.25rem 0.55rem; background: rgba(114,47,55,0.18); color: var(--wine-light); }
   .project-github {
@@ -238,13 +253,19 @@
   }
   .project-github:hover { color: var(--wine-light); border-color: var(--wine-light); }
 
+  /* two-col layout for super search */
+  .project-card.wide {
+    grid-column: span 2;
+  }
+  .supersearch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+  .ss-part { padding: 1.2rem 1.4rem; border: 1px solid rgba(114,47,55,0.25); background: rgba(0,0,0,0.3); }
+  .ss-part-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-light); margin-bottom: 0.6rem; }
+  .ss-part p { font-size: 0.75rem; line-height: 1.9; color: var(--warm-gray); }
+
   /* EDUCATION */
   #education { background: var(--black); }
   .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
-  .edu-card {
-    padding: 2rem 2.5rem; border: 1px solid rgba(114,47,55,0.2);
-    opacity: 1; transform: translateY(0);
-  }
+  .edu-card { padding: 2rem 2.5rem; border: 1px solid rgba(114,47,55,0.2); }
   .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 0.4rem; }
   .edu-school { font-size: 0.72rem; color: var(--wine-light); letter-spacing: 0.08em; margin-bottom: 0.2rem; }
   .edu-year { font-size: 0.68rem; color: var(--mid-gray); }
@@ -255,7 +276,6 @@
   .cert-item {
     padding: 1rem 1.5rem; border: 1px solid rgba(114,47,55,0.35);
     font-size: 0.75rem; color: var(--warm-gray);
-    opacity: 1; transform: translateY(0);
     transition: border-color 0.3s, color 0.3s;
   }
   .cert-item:hover { border-color: var(--wine-light); color: var(--off-white); }
@@ -291,10 +311,12 @@
     section { padding: 5rem 1.5rem; }
     #hero { padding: 0 1.5rem; }
     h1.hero-name { font-size: 3rem; }
-    .about-grid, .contact-wrapper, .edu-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-grid, .contact-wrapper, .edu-grid, .how-grid { grid-template-columns: 1fr; gap: 3rem; }
     .hero-stats { right: 1.5rem; bottom: 2rem; flex-direction: row; gap: 2rem; }
     .skills-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .project-card.wide { grid-column: span 1; }
+    .supersearch-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -312,31 +334,33 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
-  <div class="hero-tag">Applied AI Developer · LLMs · RAG · Product-Focused</div>
+  <div class="hero-tag">Data Scientist · LLMs · Computer Vision · RAG · Prompt Engineering</div>
   <h1 class="hero-name">Catherine<br><span>Mariana</span><br>Philips</h1>
-  <p class="hero-desc">I turn business requirements into working AI products - translating what stakeholders need into LLM pipelines, RAG systems, and computer vision tools that real users rely on every day.</p>
+  <p class="hero-desc">I design and deliver AI systems that work in the real world — from understanding what a business actually needs, to shipping production models that real users rely on every day.</p>
   <div class="hero-cta">
     <a href="#projects" class="btn-primary">View Projects</a>
     <a href="#contact" class="btn-outline">Get In Touch</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">98%</div><div class="stat-label">AI Model Accuracy</div></div>
-    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Years Experience</div></div>
-    <div class="stat"><div class="stat-num">2.1M</div><div class="stat-label">Records Analysed</div></div>
+    <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Tagging Accuracy</div></div>
+    <div class="stat"><div class="stat-num">3.5K+</div><div class="stat-label">Images Automated</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Years Shipped</div></div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="section-label">01 — About</div>
-  <h2 class="section-title">Applied AI<br><em>Developer</em></h2>
+  <h2 class="section-title">Data Scientist<br><em>& AI Systems Designer</em></h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I build AI products that work in the real world - starting from business requirements, not model benchmarks. My focus is the full loop: understanding what stakeholders actually need, translating that into a working AI solution, testing it thoroughly, and refining it based on how real users interact with it.</p>
-      <p>At <strong>Prodian Infotech</strong>, I was the primary point of contact with a leading IPL franchise - running feedback sessions, shaping product requirements, and then building the AI system that delivered them. The result: a CV + LLM content discovery platform with 98% accuracy, serving 20+ daily searches and saving 2.5 hours of manual work weekly.</p>
-      <p>I work with modern AI tools - <strong>Claude and ChatGPT</strong> - to prototype faster, stress-test ideas early, and move from requirement to working solution quicker than traditional development cycles allow. MSc Data Science with Distinction, <strong>Liverpool Hope University</strong>. Comfortable across the full product lifecycle, from first stakeholder conversation to post-launch iteration.</p>
+      <p>I build AI products that work in the real world — starting from business requirements, not model benchmarks. My focus is the full loop: understanding what stakeholders actually need, translating that into a working solution, and owning delivery end-to-end.</p>
+      <p>At <strong>Prodian Infotech</strong>, I designed and shipped a production AI content platform for a leading IPL franchise — a computer vision tagging pipeline achieving <strong>98% accuracy</strong>, a natural language search system over 3,500+ images, and a business intelligence dashboard tracking traffic, installs, and subscription revenue.</p>
+      <p>I work with modern AI tools — <strong>Claude, ChatGPT, and Cursor AI</strong> — to move fast from requirement to working solution. MSc Data Science with Distinction, <strong>Liverpool Hope University</strong>. Strong across Python, SQL, FastAPI, RAG pipelines, and prompt engineering.</p>
     </div>
     <div>
       <div class="section-label" style="margin-bottom:1.5rem">Core Skills</div>
@@ -344,25 +368,31 @@
         <div>
           <div class="skill-cat-name">Languages & Tools</div>
           <div class="skill-tags">
-            <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Git</span>
           </div>
         </div>
         <div>
           <div class="skill-cat-name">ML / AI</div>
           <div class="skill-tags">
-            <span class="skill-tag">LLMs</span><span class="skill-tag">RAG</span><span class="skill-tag">NLP</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">Prompt Eng.</span>
+            <span class="skill-tag">LLMs</span><span class="skill-tag">RAG</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">NLP</span><span class="skill-tag">Prompt Eng.</span><span class="skill-tag">InsightFace</span>
           </div>
         </div>
         <div>
-          <div class="skill-cat-name">Frameworks</div>
+          <div class="skill-cat-name">Frameworks & APIs</div>
           <div class="skill-tags">
-            <span class="skill-tag">FastAPI</span><span class="skill-tag">ChromaDB</span><span class="skill-tag">PyTorch</span><span class="skill-tag">OpenAI GPT</span><span class="skill-tag">Gemini API</span>
+            <span class="skill-tag">FastAPI</span><span class="skill-tag">ChromaDB</span><span class="skill-tag">Qdrant</span><span class="skill-tag">Gemini API</span><span class="skill-tag">OpenAI GPT</span><span class="skill-tag">GA4 API</span>
           </div>
         </div>
         <div>
-          <div class="skill-cat-name">Visualisation</div>
+          <div class="skill-cat-name">Analytics & Viz</div>
           <div class="skill-tags">
             <span class="skill-tag">Power BI</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-cat-name">AI Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Claude</span><span class="skill-tag">ChatGPT</span><span class="skill-tag">Cursor AI</span>
           </div>
         </div>
       </div>
@@ -370,61 +400,66 @@
   </div>
 </section>
 
-<!-- HOW I BUILD -->
+<!-- HOW I WORK -->
 <section id="how-i-build" style="background:var(--black);">
   <div class="section-label">02 — How I Work</div>
   <h2 class="section-title">From Requirements<br><em>To Working Product</em></h2>
-  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:2px;">
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
-      <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">01</div>
-      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Understand the Problem</div>
-      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">I start with stakeholders, not models. What does success look like for the business? What does the user actually need? Getting this right determines everything downstream.</p>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-label">Understand the Problem</div>
+      <p>I start with stakeholders, not models. What does success look like for the business? What does the user actually need? Getting this right determines everything downstream.</p>
     </div>
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
-      <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">02</div>
-      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Build the Right Thing</div>
-      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">Translate requirements into an AI solution using the right tools — LLMs, RAG, CV, or a combination. I use Claude and ChatGPT to prototype fast and iterate with intent.</p>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-label">Design the Right Solution</div>
+      <p>Translate requirements into an AI architecture — LLMs, computer vision, RAG, or a combination. I use Claude and ChatGPT to prototype fast and validate ideas before committing to a full build.</p>
     </div>
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
-      <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">03</div>
-      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Test Until It Breaks</div>
-      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">I enjoy finding edge cases — the inputs that break assumptions, the user behaviours no one planned for. Structured testing and prompt stress-testing are part of how I ship with confidence.</p>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-label">Test Until It Breaks</div>
+      <p>I enjoy finding edge cases — the inputs that break assumptions, the user behaviours nobody planned for. Structured testing and prompt stress-testing are core to how I ship with confidence.</p>
     </div>
-    <div style="padding:2.5rem 2rem; border:1px solid rgba(114,47,55,0.2); position:relative;">
-      <div style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgb(255,255,255); line-height:1; margin-bottom:1.5rem;">04</div>
-      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--wine-light); margin-bottom:0.8rem;">Ship & Improve</div>
-      <p style="font-size:0.78rem; line-height:2; color:var(--warm-gray);">The best part is watching it work. I stay close to users post-launch — tracking adoption, gathering feedback, and refining until the product actually solves the problem it was built for.</p>
+    <div class="how-card">
+      <div class="how-num">04</div>
+      <div class="how-label">Ship & Improve</div>
+      <p>The best part is watching it work in production. I stay close to users after launch — tracking adoption, gathering feedback, and refining until the product actually solves the problem it was built for.</p>
     </div>
   </div>
 </section>
 
-<section id="experience" style="background:var(--black);">
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--black2);">
   <div class="section-label">03 — Experience</div>
   <h2 class="section-title">Where I've<br><em>Made an Impact</em></h2>
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">July 2024 — Present</div>
-      <div class="timeline-title">Associate Software Engineer - Data</div>
-      <div class="timeline-company">Prodian Infotech Private Limited</div>
+      <div class="timeline-title">Associate Software Engineer — Data</div>
+      <div class="timeline-company">Prodian Infotech Private Limited · Chennai</div>
       <div class="timeline-desc">
-        Led the <strong>Super Search AI Content Discovery System</strong> for a leading IPL franchise - fine-tuned InsightFace CV model achieving 98% player tagging accuracy, engineered LLM-based semantic search with Gemini API, and automated a pipeline processing 1,000+ images in 30 minutes.<br><br>
-        Built a <strong>General-Purpose RAG Document Assistant</strong> solo - hybrid retrieval combining ChromaDB vector search and BM25 with RRF fusion, cross-encoder reranking, and session-based cross-document querying across PDF, Excel, CSV, PPT, and TXT formats.<br><br>
-        Helped develop a <strong>Natural Language to SQL Assistant</strong> achieving 77.5% accuracy across 62 diverse business scenarios, enabling non-technical users to query metrics in plain English.
+        Designed and delivered three production AI systems for a leading IPL franchise and internal clients — spanning computer vision, natural language search, and business intelligence.
       </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">May 2022 — July 2022</div>
-      <div class="timeline-title">Data Science Intern</div>
-      <div class="timeline-company">GITAA</div>
-      <div class="timeline-desc">
-        Performed unsupervised NLP clustering on religious texts to surface latent themes.<br><br>Built gesture recognition models using PyTorch and CNNs (AlexNet, ResNet) for real-time classification.
+      <div class="timeline-projects">
+        <div class="timeline-project">
+          <div class="timeline-project-name">Super Search — AI Tagging Pipeline</div>
+          <p>Designed the end-to-end image tagging system for CSK's content library. Trained a <strong>player classifier (InsightFace)</strong> to identify who appears in each image (98% accuracy, 20 categories) and a separate <strong>jersey classifier (ResNet)</strong> to categorise context — match, training, press conference, etc. Gemini API handles multi-label semantic tagging (action, mood, event, location). Pipeline processes 1,000+ images in 30 minutes, saving 2.5 hours of manual work weekly.</p>
+        </div>
+        <div class="timeline-project">
+          <div class="timeline-project-name">Super Search — AI Content Discovery Platform</div>
+          <p>Designed the architecture for the search platform the tagging pipeline feeds into. Natural language queries are parsed by Gemini using a live database schema and converted into parameterised MySQL queries, with multi-turn conversation support and player alias resolution. Served as <strong>primary client liaison</strong> across 3+ feedback sessions. Delivered to production in 10 months — enabling 100+ daily searches by the content team.</p>
+        </div>
+        <div class="timeline-project">
+          <div class="timeline-project-name">CSK Business Analytics Dashboard</div>
+          <p>Designed a BI dashboard covering four domains for the franchise: <strong>loyalty programme</strong> (subscriptions, revenue, ROAR vs SUPER plan splits, payment settlement), <strong>web & app traffic</strong> (dual GA4 properties with weighted-average blending), <strong>device installs</strong> (Android & iOS net growth from Play Store/App Store exports), and an <strong>NL-to-SQL assistant</strong> (OpenAI GPT) enabling non-technical stakeholders to query financial and subscriber data in plain English.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">04 — Projects</div>
   <h2 class="section-title">Selected<br><em>Work</em></h2>
@@ -432,96 +467,55 @@
   <div class="projects-block">
     <div class="projects-sublabel"><span>Professional</span>&nbsp;— Built at Prodian Infotech</div>
     <div class="projects-grid">
-      <div class="project-card">
+
+      <!-- Super Search — wide card -->
+      <div class="project-card wide">
         <div class="project-num">01</div>
-        <div class="project-title">Super Search - AI Content Discovery System</div>
-        <div class="project-desc"><strong style="color:var(--off-white);font-weight:400;">Context:</strong> A leading IPL franchise needed a way to search 5000+ images and videos by player, action, mood, and event - without manual tagging. I served as the primary client contact across 3+ feedback sessions, translating those requirements into a working product.<br><br><strong style="color:var(--off-white);font-weight:400;">What I built:</strong> Fine-tuned InsightFace for player recognition (98% accuracy across 20 categories) + Gemini API for multi-label semantic classification. Automated ingestion pipeline processes 1,000+ images and 100+ videos in 30 minutes.<br><br><strong style="color:var(--off-white);font-weight:400;">Impact:</strong> 20+ daily searches by the content team. 2.5 hours saved weekly. Delivered to production in 10 months with a 2-person team.</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">InsightFace</span><span class="project-tag">Gemini API</span><span class="project-tag">OpenAI</span><span class="project-tag">MySQL</span>
+        <div class="project-title">Super Search — AI Content Discovery System</div>
+        <p class="project-desc">
+          <strong>Context:</strong> A leading IPL franchise needed to search 3,500+ images by player, action, mood, event, and location — without manual tagging. I was the primary client contact across 3+ feedback sessions, translating those requirements into a working product. The system has two distinct layers that work together.
+        </p>
+        <div class="supersearch-grid">
+          <div class="ss-part">
+            <div class="ss-part-label">Layer 1 — AI Tagging Pipeline</div>
+            <p>Two independent classifiers: a <strong>player classifier (InsightFace, fine-tuned)</strong> that tags who appears in each image across 20 player categories at 98% accuracy, and a <strong>jersey classifier (ResNet)</strong> that categorises the context — match, training, press conference. Gemini API adds semantic multi-label tags: action, mood, event, location. 1,000+ images processed in 30 minutes.</p>
+          </div>
+          <div class="ss-part">
+            <div class="ss-part-label">Layer 2 — Search Platform</div>
+            <p>The tagged data powers a natural language search UI. User queries are parsed by Gemini using a live DB schema and converted to parameterised MySQL queries. Supports multi-turn conversation, player alias resolution ("MSD" → "MS Dhoni"), and role-based access control across 5 user roles. Delivered to production in 10 months — 100+ daily searches by the content team.</p>
+          </div>
         </div>
-        <div style="margin-top:2rem; padding:1.2rem 1rem; background:rgba(0,0,0,0.4); border:1px solid rgba(114,47,55,0.2); overflow:visible;">
-          <div style="color:var(--wine-light); margin-bottom:1rem; letter-spacing:0.15em; font-size:0.6rem; text-transform:uppercase; font-family:'DM Mono',monospace;">System Architecture</div>
-          <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block; overflow:visible;">
-            <defs>
-              <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L7,3 z" fill="#722F37"/>
-              </marker>
-            </defs>
-            <text x="10" y="14" fill="#a09890" font-family="DM Mono,monospace" font-size="6" letter-spacing="1">IMAGE TRACK</text>
-            <text x="10" y="140" fill="#a09890" font-family="DM Mono,monospace" font-size="6" letter-spacing="1">VIDEO TRACK</text>
-            <rect x="2" y="20" width="100" height="36" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="52" y="34" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Image Ingestion</text>
-            <text x="52" y="47" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">3,500+ images</text>
-            <line x1="103" y1="38" x2="120" y2="38" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="122" y="20" width="105" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
-            <text x="174" y="34" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">InsightFace CV</text>
-            <text x="174" y="47" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">Fine-tuned · 98% acc.</text>
-            <line x1="228" y1="38" x2="245" y2="38" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="247" y="20" width="100" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
-            <text x="297" y="34" text-anchor="middle" fill="#F5F0EB" font-family="DM Mono,monospace" font-size="7">Player Tags</text>
-            <text x="297" y="47" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">20 categories</text>
-            <line x1="348" y1="38" x2="365" y2="38" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="2" y="148" width="100" height="36" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="52" y="162" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Video Ingestion</text>
-            <text x="52" y="175" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">raw footage</text>
-            <line x1="103" y1="166" x2="120" y2="166" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="122" y="148" width="105" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
-            <text x="174" y="162" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Whisper ASR</text>
-            <text x="174" y="175" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">Transcription</text>
-            <line x1="228" y1="166" x2="245" y2="166" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="247" y="148" width="100" height="36" rx="4" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
-            <text x="297" y="162" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Frame Sampling</text>
-            <text x="297" y="175" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">Visual context</text>
-            <line x1="348" y1="166" x2="365" y2="166" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="367" y="72" width="108" height="58" rx="4" fill="rgba(114,47,55,0.22)" stroke="#722F37" stroke-width="1.5"/>
-            <text x="421" y="90" text-anchor="middle" fill="#F5F0EB" font-family="DM Mono,monospace" font-size="7.5" font-weight="400">Gemini API</text>
-            <text x="421" y="104" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6.5">Multi-label</text>
-            <text x="421" y="117" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6.5">Semantic Tags</text>
-            <path d="M365,38 Q390,38 390,72" fill="none" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <path d="M365,166 Q390,166 390,130" fill="none" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <line x1="476" y1="101" x2="493" y2="101" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="495" y="72" width="40" height="58" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="515" y="97" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="6.5">MySQL</text>
-            <text x="515" y="110" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">Index</text>
-            <line x1="515" y1="131" x2="515" y2="168" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="474" y="170" width="82" height="38" rx="4" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="515" y="186" text-anchor="middle" fill="#ddd8d2" font-family="DM Mono,monospace" font-size="7">Search API</text>
-            <text x="515" y="200" text-anchor="middle" fill="#a09890" font-family="DM Mono,monospace" font-size="6">Query interface</text>
-            <line x1="515" y1="209" x2="515" y2="228" stroke="#722F37" stroke-width="1" marker-end="url(#arr)"/>
-            <rect x="464" y="230" width="102" height="42" rx="4" fill="rgba(114,47,55,0.25)" stroke="#722F37" stroke-width="1.5"/>
-            <text x="515" y="248" text-anchor="middle" fill="#F5F0EB" font-family="DM Mono,monospace" font-size="7" font-weight="400">Content Team UI</text>
-            <text x="515" y="263" text-anchor="middle" fill="#c45c6a" font-family="DM Mono,monospace" font-size="6">100+ searches/day</text>
-            <rect x="10" y="285" width="9" height="9" rx="2" fill="rgba(114,47,55,0.15)" stroke="rgba(114,47,55,0.7)" stroke-width="1"/>
-            <text x="23" y="294" fill="#a09890" font-family="DM Mono,monospace" font-size="6">AI component</text>
-            <rect x="105" y="285" width="9" height="9" rx="2" fill="rgba(20,20,20,0.9)" stroke="rgba(114,47,55,0.45)" stroke-width="1"/>
-            <text x="118" y="294" fill="#a09890" font-family="DM Mono,monospace" font-size="6">Data / infra</text>
-          </svg>
+        <div class="project-tags" style="margin-top:1.5rem">
+          <span class="project-tag">Python</span><span class="project-tag">InsightFace</span><span class="project-tag">ResNet</span><span class="project-tag">Gemini API</span><span class="project-tag">FastAPI</span><span class="project-tag">MySQL</span>
         </div>
       </div>
+
+      <!-- CSK Analytics -->
       <div class="project-card">
         <div class="project-num">02</div>
-        <div class="project-title">General-Purpose RAG Document Assistant</div>
-        <div class="project-desc"><strong style="color:var(--off-white);font-weight:400;">Problem:</strong> Users needed to query documents in plain language - without knowing which file contained what, or how to search across formats. Built end-to-end solo.<br><br><strong style="color:var(--off-white);font-weight:400;">What I built:</strong> RAG system supporting PDF, Excel, CSV, PPT, and TXT. Hybrid retrieval (vector search + BM25 with RRF fusion) with cross-encoder reranking. Session-based multi-document querying with source citation so users always know where an answer came from.<br><br><strong style="color:var(--off-white);font-weight:400;">Focus:</strong> Heavy emphasis on answer quality and UX - tested extensively for edge cases including multi-turn context drift, ambiguous queries, and cross-document conflicts.</div>
+        <div class="project-title">CSK Business Analytics Dashboard</div>
+        <div class="project-desc">
+          <strong>Problem:</strong> The franchise needed a single view across four business domains — loyalty programme performance, website & app traffic, device installs, and subscription finance.<br><br>
+          <strong>What I designed:</strong> Integrated dual GA4 properties (web + app) with weighted-average metric blending for accurate DAU/MAU/stickiness reporting. Loyalty programme KPIs pull directly from MySQL — registrations, revenue, ROAR vs SUPER plan splits, payment gateway settlements. Device install/uninstall trends sourced from Play Store and App Store exports. An NL-to-SQL assistant (OpenAI GPT) lets non-technical stakeholders query subscriber and financial data in plain English.
+        </div>
         <div class="project-tags">
-          <span class="project-tag">FastAPI</span><span class="project-tag">ChromaDB</span><span class="project-tag">Groq LLM</span><span class="project-tag">Sentence Transformers</span>
+          <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">GA4 API</span><span class="project-tag">MySQL</span><span class="project-tag">OpenAI GPT</span><span class="project-tag">Power BI</span>
         </div>
       </div>
+
+      <!-- RAG -->
       <div class="project-card">
         <div class="project-num">03</div>
-        <div class="project-title">Natural Language to SQL Assistant</div>
-        <div class="project-desc"><strong style="color:var(--off-white);font-weight:400;">Problem:</strong> Non-technical business users couldn't self-serve on data — every question went through analysts. The goal was to let them query metrics in plain English.<br><br><strong style="color:var(--off-white);font-weight:400;">What I built:</strong> Two-module system - KPI queries and hypothesis testing - using prompt engineering with schema injection and few-shot examples. Tested across Gemini API and OpenAI GPT with the same structured test suite.<br><br><strong style="color:var(--off-white);font-weight:400;">Testing:</strong> 62 structured scenarios covering aggregations, filters, joins, and nested logic. 77.5% end-to-end accuracy (48/62). Failure analysis drove each iteration of prompt design.</div>
+        <div class="project-title">General-Purpose RAG Document Assistant</div>
+        <div class="project-desc">
+          <strong>Problem:</strong> Users needed to query documents in plain language — without knowing which file contained what, or how to search across formats. Built end-to-end solo.<br><br>
+          <strong>What I designed:</strong> Multi-format ingestion (PDF, Excel, CSV, PPT, TXT, images) with format-aware chunking — layout-aware PDF extraction, slide-level PPT chunking, row-batched CSV/Excel. Hybrid retrieval: vector search + BM25 with Reciprocal Rank Fusion, then cross-encoder reranking. Session-based cross-document querying with source citation so users always know where an answer came from. Switchable vector store architecture (ChromaDB locally, Qdrant in production).
+        </div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">Gemini API</span><span class="project-tag">OpenAI GPT</span><span class="project-tag">Prompt Engineering</span>
+          <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">LlamaParse</span><span class="project-tag">ChromaDB</span><span class="project-tag">Qdrant</span><span class="project-tag">BM25</span><span class="project-tag">Groq LLM</span>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <div class="project-title">Insurance Portfolio Analytics</div>
-        <div class="project-desc"><strong style="color:var(--off-white);font-weight:400;">Scope:</strong> 2.1M policy records, 29 attributes, 6-year span (2018–2024). Built automated cleaning pipeline that cut preprocessing time by 30%.<br><br><strong style="color:var(--off-white);font-weight:400;">Output:</strong> Executive Power BI dashboard covering ₹1,298 crore in claims, COVID-19 premium impact, channel performance breakdown (OEM 57.88% vs. SF 3.52%), and 55.25% customer retention analysis — built for C-suite consumption.</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">Power BI</span><span class="project-tag">Data Engineering</span>
-        </div>
-      </div>
+
     </div>
   </div>
 
@@ -530,7 +524,7 @@
     <div class="projects-grid">
       <div class="project-card academic">
         <div class="project-num">01</div>
-        <div class="project-title">MeloSOMmatic - Music Recommendation System</div>
+        <div class="project-title">MeloSOMmatic — Music Recommendation System</div>
         <div class="project-desc">Master's thesis at Liverpool Hope University. Recommender using Self-Organizing Maps to cluster songs by audio features with cosine similarity, delivered as a user-facing interface via Spotify API data.</div>
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">SOM</span><span class="project-tag">Spotify API</span><span class="project-tag">ML</span>
@@ -540,7 +534,7 @@
       <div class="project-card academic">
         <div class="project-num">02</div>
         <div class="project-title">Bank Marketing Campaign Analysis</div>
-        <div class="project-desc">Classification models (Logistic Regression, KNN, Random Forest) to predict term deposit subscription likelihood from 45,000+ customer records sourced from a bank's phone-based marketing campaign.</div>
+        <div class="project-desc">Classification models (Logistic Regression, KNN, Random Forest) predicting term deposit subscription likelihood from 45,000+ customer records sourced from a bank's phone-based marketing campaign.</div>
         <div class="project-tags">
           <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span class="project-tag">Classification</span>
         </div>
@@ -559,12 +553,13 @@
   </div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
   <div class="section-label">05 — Education</div>
   <h2 class="section-title">Academic<br><em>Background</em></h2>
   <div class="edu-grid">
     <div class="edu-card">
-      <div class="edu-degree">Master's in Data Science - Distinction</div>
+      <div class="edu-degree">Master's in Data Science — Distinction</div>
       <div class="edu-school">Liverpool Hope University, United Kingdom</div>
       <div class="edu-year">October 2023</div>
     </div>
@@ -574,7 +569,7 @@
       <div class="edu-year">July 2022</div>
     </div>
     <div class="edu-card">
-      <div class="edu-degree">Bachelor's in Information Technology - First Class with Distinction</div>
+      <div class="edu-degree">Bachelor's in Information Technology — First Class with Distinction</div>
       <div class="edu-school">Women's Christian College, Chennai</div>
       <div class="edu-year">April 2021</div>
     </div>
@@ -586,6 +581,7 @@
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section id="certifications" style="background:var(--black2);">
   <div class="section-label">06 — Certifications</div>
   <h2 class="section-title">Continuous<br><em>Learning</em></h2>
@@ -598,12 +594,13 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">07 — Contact</div>
   <h2 class="section-title">Let's Build<br><em>Something</em></h2>
   <div class="contact-wrapper">
     <div class="contact-info">
-      <p>I'm open to data science roles, AI/ML engineering opportunities, and collaborative projects. Whether you have a complex data challenge or want to explore what's possible with modern AI — let's talk.</p>
+      <p>Open to data science, AI/ML, and product analytics roles in Chennai and Bangalore. If you're building something that needs someone who can think in both business problems and AI systems — let's talk.</p>
       <div class="contact-links">
         <a href="#" id="email-link" class="contact-link">
           <span class="contact-link-label">Email</span><span id="email-text"></span>
@@ -622,14 +619,14 @@
     <div>
       <div class="section-label" style="margin-bottom:1.5rem">Currently Based In</div>
       <p style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; line-height:1.2; margin-bottom:2rem">Chennai,<br><span style="color:var(--wine-light);font-style:italic">India</span></p>
-      <p style="font-size:0.78rem; line-height:2; color:var(--mid-gray)">Open to remote, hybrid, or relocation opportunities globally. Available to connect for the right role or collaboration.</p>
+      <p style="font-size:0.78rem; line-height:2; color:var(--mid-gray)">Open to opportunities in Chennai and Bangalore. Available to connect for the right role.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-name">Catherine Mariana Philips</div>
-  <p>Applied AI Developer · LLMs · RAG · Chennai, India</p>
+  <p>Data Scientist · AI Systems · Chennai, India</p>
 </footer>
 
 <script>
