@@ -180,13 +180,6 @@
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .skill-tag { font-size: 0.68rem; padding: 0.3rem 0.7rem; border: 1px solid rgba(114,47,55,0.5); color: var(--warm-gray); }
 
-  /* HOW I WORK */
-  .how-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
-  .how-card { padding: 2.5rem 2rem; border: 1px solid rgba(114,47,55,0.2); position: relative; }
-  .how-num { font-family: 'Cormorant Garamond',serif; font-size: 4rem; font-weight: 300; color: #fff; line-height: 1; margin-bottom: 1.5rem; }
-  .how-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-light); margin-bottom: 0.8rem; }
-  .how-card p { font-size: 0.78rem; line-height: 2; color: var(--warm-gray); }
-
   /* EXPERIENCE */
   #experience { background: var(--black); }
   .timeline { position: relative; padding-left: 2rem; }
@@ -228,7 +221,7 @@
     position: relative; overflow: hidden;
     transition: border-color 0.3s;
   }
-  .project-card.academic { background: rgba(114,47,55,0.05); }
+  .project-card.academic { background: rgba(114,47,55,0.05); font-size: 0.75rem; padding: 1.5rem; }
   .project-card:hover { border-color: rgba(114,47,55,0.7); }
   .project-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -237,11 +230,15 @@
   }
   .project-card:hover::before { transform: scaleX(1); }
   .project-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; line-height: 1; margin-bottom: 1rem; }
+  .project-card.academic .project-num { font-size: 1.8rem; margin-bottom: 0.5rem; }
   .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.8rem; line-height: 1.2; }
+  .project-card.academic .project-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
   .project-desc { font-size: 0.78rem; line-height: 2; color: var(--warm-gray); margin-bottom: 1.5rem; }
+  .project-card.academic .project-desc { font-size: 0.73rem; line-height: 1.8; margin-bottom: 1rem; }
   .project-desc strong { color: var(--off-white); font-weight: 400; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .project-tag { font-size: 0.63rem; padding: 0.25rem 0.55rem; background: rgba(114,47,55,0.18); color: var(--wine-light); }
+  .project-card.academic .project-tag { font-size: 0.58rem; padding: 0.2rem 0.4rem; }
   .project-github {
     display: inline-flex; align-items: center; gap: 0.4rem;
     margin-top: 1.2rem;
@@ -251,6 +248,7 @@
     padding-bottom: 0.15rem;
     transition: color 0.3s, border-color 0.3s;
   }
+  .project-card.academic .project-github { font-size: 0.58rem; margin-top: 0.8rem; }
   .project-github:hover { color: var(--wine-light); border-color: var(--wine-light); }
 
   /* two-col layout for super search */
@@ -311,7 +309,7 @@
     section { padding: 5rem 1.5rem; }
     #hero { padding: 0 1.5rem; }
     h1.hero-name { font-size: 3rem; }
-    .about-grid, .contact-wrapper, .edu-grid, .how-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-grid, .contact-wrapper, .edu-grid { grid-template-columns: 1fr; gap: 3rem; }
     .hero-stats { right: 1.5rem; bottom: 2rem; flex-direction: row; gap: 2rem; }
     .skills-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -326,7 +324,6 @@
   <div class="nav-logo">Catherine</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#how-i-build">How I Work</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
@@ -340,14 +337,14 @@
   <div class="hero-lines"></div>
   <div class="hero-tag">Applied AI Engineer · LLMs · Computer Vision · RAG · Prompt Engineering</div>
   <h1 class="hero-name">Catherine<br><span>Mariana</span><br>Philips</h1>
-  <p class="hero-desc">I design and deliver AI systems that work in the real world — from understanding what a business actually needs, to shipping production models that real users rely on every day.</p>
+  <p class="hero-desc">2 years shipping production AI systems. Built a 98% accurate computer vision tagging pipeline, natural language search platform, and business analytics dashboard for Chennai Super Kings. Currently building Tela, an NL2SQL analytics platform.</p>
   <div class="hero-cta">
     <a href="#projects" class="btn-primary">View Projects</a>
     <a href="#contact" class="btn-outline">Get In Touch</a>
   </div>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Tagging Accuracy</div></div>
-    <div class="stat"><div class="stat-num">3.5K+</div><div class="stat-label">Images Automated</div></div>
+    <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Images Automated</div></div>
     <div class="stat"><div class="stat-num">2</div><div class="stat-label">Years Shipped</div></div>
   </div>
 </section>
@@ -355,38 +352,44 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="section-label">01 — About</div>
-  <h2 class="section-title">Applied AI Engineer<br><em>& AI Systems Designer</em></h2>
+  <h2 class="section-title">Applied AI<br><em>Engineer</em></h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I build AI products that work in the real world — starting from business requirements, not model benchmarks. My focus is the full loop: understanding what stakeholders actually need, translating that into a working solution, and owning delivery end-to-end.</p>
-      <p>At <strong>Prodian Infotech</strong>, I designed and shipped a production AI content platform for a leading IPL franchise — a computer vision tagging pipeline achieving <strong>98% accuracy</strong>, a natural language search system over 3,500+ images, and a business intelligence dashboard tracking traffic, installs, and subscription revenue.</p>
-      <p>I work with modern AI tools — <strong>Claude, ChatGPT, and Cursor AI</strong> — to move fast from requirement to working solution. MSc Data Science with Distinction, <strong>Liverpool Hope University</strong>. Strong across Python, SQL, FastAPI, RAG pipelines, and prompt engineering.</p>
+      <p>I build AI systems that work in production. 2 years designing and shipping end-to-end solutions at Prodian Infotech — starting from business requirements and owning delivery through to real users.</p>
+      <p>Most recent work: designed and built a computer vision tagging pipeline achieving 98% accuracy across 20 player categories on 10,000+ images for Chennai Super Kings, plus a natural language search platform over that tagged data. Also currently building Tela, an NL2SQL analytics platform that converts plain-English questions into secure SQL queries and dashboards.</p>
+      <p>Strong across Python, SQL, FastAPI, RAG pipelines, LLM prompt engineering, and computer vision. MSc Data Science with Distinction, Liverpool Hope University. Comfortable using Claude, ChatGPT, and modern AI tools to move fast from requirement to working product.</p>
     </div>
     <div>
       <div class="section-label" style="margin-bottom:1.5rem">Core Skills</div>
       <div class="skills-grid">
         <div>
-          <div class="skill-cat-name">Languages & Tools</div>
+          <div class="skill-cat-name">AI / ML</div>
           <div class="skill-tags">
-            <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Git</span>
+            <span class="skill-tag">RAG Pipelines</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">NLP</span><span class="skill-tag">Multi-label Classification</span>
           </div>
         </div>
         <div>
-          <div class="skill-cat-name">ML / AI</div>
+          <div class="skill-cat-name">LLM Platforms</div>
           <div class="skill-tags">
-            <span class="skill-tag">LLMs</span><span class="skill-tag">RAG</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">NLP</span><span class="skill-tag">Prompt Eng.</span><span class="skill-tag">InsightFace</span>
+            <span class="skill-tag">Google Gemini</span><span class="skill-tag">OpenAI GPT</span><span class="skill-tag">Anthropic Claude</span><span class="skill-tag">Groq</span>
           </div>
         </div>
         <div>
-          <div class="skill-cat-name">Frameworks & APIs</div>
+          <div class="skill-cat-name">Engineering</div>
           <div class="skill-tags">
-            <span class="skill-tag">FastAPI</span><span class="skill-tag">ChromaDB</span><span class="skill-tag">Qdrant</span><span class="skill-tag">Gemini API</span><span class="skill-tag">OpenAI GPT</span><span class="skill-tag">GA4 API</span>
+            <span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span>
           </div>
         </div>
         <div>
-          <div class="skill-cat-name">Analytics & Viz</div>
+          <div class="skill-cat-name">Data & Analytics</div>
           <div class="skill-tags">
-            <span class="skill-tag">Power BI</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Google Analytics 4 API</span><span class="skill-tag">Power BI</span><span class="skill-tag">Feature Engineering</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-cat-name">Delivery</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Stakeholder Mgmt</span><span class="skill-tag">Client Liaison</span><span class="skill-tag">Requirements Gathering</span>
           </div>
         </div>
         <div>
@@ -400,59 +403,40 @@
   </div>
 </section>
 
-<!-- HOW I WORK -->
-<section id="how-i-build" style="background:var(--black);">
-  <div class="section-label">02 — How I Work</div>
-  <h2 class="section-title">From Requirements<br><em>To Working Product</em></h2>
-  <div class="how-grid">
-    <div class="how-card">
-      <div class="how-num">01</div>
-      <div class="how-label">Understand the Problem</div>
-      <p>I start with stakeholders, not models. What does success look like for the business? What does the user actually need? Getting this right determines everything downstream.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-num">02</div>
-      <div class="how-label">Design the Right Solution</div>
-      <p>Translate requirements into an AI architecture — LLMs, computer vision, RAG, or a combination. I use Claude and ChatGPT to prototype fast and validate ideas before committing to a full build.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-num">03</div>
-      <div class="how-label">Test Until It Breaks</div>
-      <p>I enjoy finding edge cases — the inputs that break assumptions, the user behaviours nobody planned for. Structured testing and prompt stress-testing are core to how I ship with confidence.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-num">04</div>
-      <div class="how-label">Ship & Improve</div>
-      <p>The best part is watching it work in production. I stay close to users after launch — tracking adoption, gathering feedback, and refining until the product actually solves the problem it was built for.</p>
-    </div>
-  </div>
-</section>
-
 <!-- EXPERIENCE -->
 <section id="experience" style="background:var(--black2);">
-  <div class="section-label">03 — Experience</div>
-  <h2 class="section-title">Where I've<br><em>Made an Impact</em></h2>
+  <div class="section-label">02 — Experience</div>
+  <h2 class="section-title">Professional<br><em>Work</em></h2>
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">July 2024 — Present</div>
-      <div class="timeline-title">Associate Software Engineer — Data</div>
+      <div class="timeline-title">Software Engineer (promoted June 2026)</div>
       <div class="timeline-company">Prodian Infotech Private Limited · Chennai</div>
-      <div class="timeline-desc">
-        Designed and delivered three production AI systems for a leading IPL franchise and internal clients — spanning computer vision, natural language search, and business intelligence.
+      <div class="timeline-projects">
+        <div class="timeline-project">
+          <div class="timeline-project-name">Tela — AI-Powered NL2SQL Analytics Platform</div>
+          <p>Currently building a full-stack analytics platform that converts natural-language questions into secure SQL queries and auto-generated dashboards. <strong>Backend:</strong> Built robust FastAPI endpoints, implemented disk-caching for data stores, and engineered concurrency logic allowing users to cancel long-running queries mid-execution. <strong>LLM Orchestration:</strong> Implemented a self-correcting pipeline — if the LLM generates invalid SQL, we capture the database error, feed it back to the LLM, and auto-retry, drastically improving query success rate. <strong>Schema Retrieval:</strong> Optimized how the system picks which database tables are relevant to each question — trimmed down the information sent to the AI so it wouldn't get overloaded, and made sure if a user directly named a table, it was always included. <strong>Security:</strong> Added a validation step that checks every AI-generated SQL query before it runs — blocking harmful queries and stopping users with restricted access from pulling columns they weren't allowed to see. <strong>Frontend:</strong> Built the React/TypeScript Admin Panel sidebar, a View Switcher (Admin vs. User simulation), dynamic dashboard filters wired to the backend, and Cancel/Favourite UI components.</p>
+        </div>
       </div>
+      <div class="timeline-title" style="margin-top: 2rem; font-size: 1.3rem;">Associate Software Engineer — Data</div>
+      <div class="timeline-company" style="margin-bottom: 1.2rem;">July 2024 – June 2026</div>
       <div class="timeline-projects">
         <div class="timeline-project">
           <div class="timeline-project-name">Super Search — AI Tagging Pipeline</div>
-          <p>Designed the end-to-end image tagging system for CSK's content library. Trained a <strong>player classifier (InsightFace)</strong> to identify who appears in each image (98% accuracy, 20 categories) and a separate <strong>jersey classifier (ResNet)</strong> to categorise context — match, training, press conference, etc. Gemini API handles multi-label semantic tagging (action, mood, event, location). Pipeline processes 1,000+ images in 30 minutes, saving 2.5 hours of manual work weekly.</p>
+          <p>Designed and built the end-to-end AI tagging system for CSK's 10,000+ image library. <strong>Player Recognition:</strong> Fine-tuned InsightFace for automated player classification — 98% accuracy across 20 player categories. <strong>LLM-Based Semantic Tagging:</strong> Built a multi-label classifier using Gemini API that tags action, mood, event, and location — processing 1,000+ images in 30 minutes, saving 2.5 hours of manual work weekly. <strong>Infrastructure:</strong> Architected a concurrent batch processing pipeline with fault-tolerant checkpointing and JPEG optimisation to manage API costs and enable resumable runs.</p>
         </div>
         <div class="timeline-project">
           <div class="timeline-project-name">Super Search — AI Content Discovery Platform</div>
-          <p>Designed the architecture for the search platform the tagging pipeline feeds into. Natural language queries are parsed by Gemini using a live database schema and converted into parameterised MySQL queries, with multi-turn conversation support and player alias resolution. Served as <strong>primary client liaison</strong> across 3+ feedback sessions. Delivered to production in 10 months — enabling 100+ daily searches by the content team.</p>
+          <p>Designed the full-stack search platform that powers the tagged data. Natural language queries are understood by Gemini using the live database structure, then safely turned into database queries — supporting back-and-forth conversations and recognizing player nicknames (e.g., "MSD" → "MS Dhoni"). <strong>Access Control:</strong> Designed role-based access control (5 roles: admin, content user, player, QC reviewer, QC admin) and a two-step content review workflow with full audit logging. <strong>Client Delivery:</strong> Served as primary client liaison across 10+ feedback sessions; delivered to production within 10 months in a 2-person team — enabling 100+ daily searches by the content team.</p>
         </div>
         <div class="timeline-project">
           <div class="timeline-project-name">CSK Business Analytics Dashboard</div>
-          <p>Designed a BI dashboard covering four domains for the franchise: <strong>loyalty programme</strong> (subscriptions, revenue, ROAR vs SUPER plan splits, payment settlement), <strong>web & app traffic</strong> (dual GA4 properties with weighted-average blending), <strong>device installs</strong> (Android & iOS net growth from Play Store/App Store exports), and an <strong>NL-to-SQL assistant</strong> (OpenAI GPT) enabling non-technical stakeholders to query financial and subscriber data in plain English.</p>
+          <p>Designed and built a BI dashboard covering four domains: loyalty programme performance (subscriptions, revenue, ROAR vs SUPER plan splits), website & app traffic (dual GA4 properties with accurate cross-property metric reporting), device installs (Android & iOS net growth from app stores), and an NL-to-SQL assistant (OpenAI GPT) enabling non-technical stakeholders to query subscriber and financial data in plain English.</p>
+        </div>
+        <div class="timeline-project">
+          <div class="timeline-project-name">General-Purpose RAG Document Assistant</div>
+          <p>Built end-to-end solo. Users upload documents in any format (PDF, Excel, CSV, PPT, TXT, images) and query them in natural language. Multi-format ingestion with format-aware chunking — layout-aware PDF extraction, slide-level PPT chunking, row-batched CSV/Excel. Combined two different search methods (meaning-based and keyword-based) and re-ranked the results for accuracy, so multi-turn conversations stayed accurate and every answer cited its source document.</p>
         </div>
       </div>
     </div>
@@ -460,12 +444,11 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
-  <div class="section-label">04 — Projects</div>
-  <h2 class="section-title">Selected<br><em>Work</em></h2>
+<section id="projects" style="background:var(--black);">
+  <div class="section-label">03 — Projects</div>
+  <h2 class="section-title">Professional<br><em>Highlights</em></h2>
 
   <div class="projects-block">
-    <div class="projects-sublabel"><span>Professional</span>&nbsp;— Built at Prodian Infotech</div>
     <div class="projects-grid">
 
       <!-- Super Search — wide card -->
@@ -473,89 +456,91 @@
         <div class="project-num">01</div>
         <div class="project-title">Super Search — AI Content Discovery System</div>
         <p class="project-desc">
-          <strong>Context:</strong> A leading IPL franchise needed to search 3,500+ images by player, action, mood, event, and location — without manual tagging. I was the primary client contact across 3+ feedback sessions, translating those requirements into a working product. The system has two distinct layers that work together.
+          Designed and built an AI-powered image search platform for Chennai Super Kings covering 10,000+ images. Two-layer system: a computer vision tagging pipeline (InsightFace fine-tuning for player recognition at 98% accuracy, Gemini API for semantic tagging) feeds a natural language search platform (Gemini-powered NL-to-SQL for back-and-forth queries, role-based access control across 5 user roles). Delivered to production in 10 months, enabling 100+ daily searches by the content team.
         </p>
-        <div class="supersearch-grid">
-          <div class="ss-part">
-            <div class="ss-part-label">Layer 1 — AI Tagging Pipeline</div>
-            <p>Two independent classifiers: a <strong>player classifier (InsightFace, fine-tuned)</strong> that tags who appears in each image across 20 player categories at 98% accuracy, and a <strong>jersey classifier (ResNet)</strong> that categorises the context — match, training, press conference. Gemini API adds semantic multi-label tags: action, mood, event, location. 1,000+ images processed in 30 minutes.</p>
-          </div>
-          <div class="ss-part">
-            <div class="ss-part-label">Layer 2 — Search Platform</div>
-            <p>The tagged data powers a natural language search UI. User queries are parsed by Gemini using a live DB schema and converted to parameterised MySQL queries. Supports multi-turn conversation, player alias resolution ("MSD" → "MS Dhoni"), and role-based access control across 5 user roles. Delivered to production in 10 months — 100+ daily searches by the content team.</p>
-          </div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">InsightFace</span><span class="project-tag">Gemini API</span><span class="project-tag">FastAPI</span><span class="project-tag">MySQL</span><span class="project-tag">React</span>
         </div>
-        <div class="project-tags" style="margin-top:1.5rem">
-          <span class="project-tag">Python</span><span class="project-tag">InsightFace</span><span class="project-tag">ResNet</span><span class="project-tag">Gemini API</span><span class="project-tag">FastAPI</span><span class="project-tag">MySQL</span>
+      </div>
+
+      <!-- Tela -->
+      <div class="project-card">
+        <div class="project-num">02</div>
+        <div class="project-title">Tela — AI-Powered NL2SQL Platform</div>
+        <div class="project-desc">
+          Full-stack analytics platform converting natural-language questions into secure SQL queries and auto-generated dashboards. Currently building: intelligent schema retrieval, self-correcting LLM pipeline (retry on SQL errors), query validation & security, disk-caching for API cost optimization, and React/TypeScript admin interface.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">OpenAI</span><span class="project-tag">Claude</span><span class="project-tag">Gemini</span><span class="project-tag">React</span><span class="project-tag">MySQL</span>
         </div>
       </div>
 
       <!-- CSK Analytics -->
       <div class="project-card">
-        <div class="project-num">02</div>
+        <div class="project-num">03</div>
         <div class="project-title">CSK Business Analytics Dashboard</div>
         <div class="project-desc">
-          <strong>Problem:</strong> The franchise needed a single view across four business domains — loyalty programme performance, website & app traffic, device installs, and subscription finance.<br><br>
-          <strong>What I designed:</strong> Integrated dual GA4 properties (web + app) with weighted-average metric blending for accurate DAU/MAU/stickiness reporting. Loyalty programme KPIs pull directly from MySQL — registrations, revenue, ROAR vs SUPER plan splits, payment gateway settlements. Device install/uninstall trends sourced from Play Store and App Store exports. An NL-to-SQL assistant (OpenAI GPT) lets non-technical stakeholders query subscriber and financial data in plain English.
+          Multi-domain BI dashboard for Chennai Super Kings covering loyalty programme KPIs, website & app traffic (dual GA4 properties), device installs, and subscriber/financial data. Integrated Sprout Social API for social media tracking, Play Store/App Store exports for install trends, and an NL-to-SQL assistant (OpenAI GPT) for non-technical stakeholder queries.
         </div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">GA4 API</span><span class="project-tag">MySQL</span><span class="project-tag">OpenAI GPT</span><span class="project-tag">Power BI</span>
+          <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">GA4 API</span><span class="project-tag">Sprout Social API</span><span class="project-tag">OpenAI GPT</span><span class="project-tag">Power BI</span>
         </div>
       </div>
 
       <!-- RAG -->
       <div class="project-card">
-        <div class="project-num">03</div>
+        <div class="project-num">04</div>
         <div class="project-title">General-Purpose RAG Document Assistant</div>
         <div class="project-desc">
-          <strong>Problem:</strong> Users needed to query documents in plain language — without knowing which file contained what, or how to search across formats. Built end-to-end solo.<br><br>
-          <strong>What I designed:</strong> Multi-format ingestion (PDF, Excel, CSV, PPT, TXT, images) with format-aware chunking — layout-aware PDF extraction, slide-level PPT chunking, row-batched CSV/Excel. Hybrid retrieval: vector search + BM25 with Reciprocal Rank Fusion, then cross-encoder reranking. Session-based cross-document querying with source citation so users always know where an answer came from. Switchable vector store architecture (ChromaDB locally, Qdrant in production).
+          Multi-format document ingestion and querying system. Handles PDF, Excel, CSV, PPT, TXT, images with format-aware chunking. Hybrid retrieval combining meaning-based and keyword-based search with result re-ranking. Session-based cross-document queries with source citation.
         </div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">LlamaParse</span><span class="project-tag">ChromaDB</span><span class="project-tag">Qdrant</span><span class="project-tag">BM25</span><span class="project-tag">Groq LLM</span>
+          <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">LlamaParse</span><span class="project-tag">ChromaDB</span><span class="project-tag">Groq LLM</span>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div class="projects-block">
-    <div class="projects-sublabel"><span>Academic</span>&nbsp;— Research & University Projects</div>
-    <div class="projects-grid">
+  <!-- ACADEMIC PROJECTS — DE-EMPHASIZED -->
+  <div class="projects-block" style="opacity: 0.75; padding-top: 3rem; border-top: 1px solid rgba(114,47,55,0.15);">
+    <div class="projects-sublabel"><span>Academic</span>&nbsp;— University & Research Projects</div>
+    <div class="projects-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div class="project-card academic">
         <div class="project-num">01</div>
-        <div class="project-title">MeloSOMmatic — Music Recommendation System</div>
-        <div class="project-desc">Master's thesis at Liverpool Hope University. Recommender using Self-Organizing Maps to cluster songs by audio features with cosine similarity, delivered as a user-facing interface via Spotify API data.</div>
+        <div class="project-title">MeloSOMmatic — Music Recommender</div>
+        <div class="project-desc">Master's thesis: Self-Organizing Maps for song clustering with Spotify API integration.</div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">SOM</span><span class="project-tag">Spotify API</span><span class="project-tag">ML</span>
+          <span class="project-tag">Python</span><span class="project-tag">SOM</span><span class="project-tag">Spotify API</span>
         </div>
-        <a href="https://github.com/catherine-philips/Music-Recommender" target="_blank" class="project-github">↗ View on GitHub</a>
+        <a href="https://github.com/catherine-philips/Music-Recommender" target="_blank" class="project-github">↗ GitHub</a>
       </div>
       <div class="project-card academic">
         <div class="project-num">02</div>
-        <div class="project-title">Bank Marketing Campaign Analysis</div>
-        <div class="project-desc">Classification models (Logistic Regression, KNN, Random Forest) predicting term deposit subscription likelihood from 45,000+ customer records sourced from a bank's phone-based marketing campaign.</div>
+        <div class="project-title">Bank Marketing Campaign</div>
+        <div class="project-desc">Classification models (Logistic Regression, KNN, Random Forest) predicting subscription likelihood on 45,000+ records.</div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span class="project-tag">Classification</span>
+          <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span>
         </div>
-        <a href="https://github.com/catherine-philips/Bank-Marketing" target="_blank" class="project-github">↗ View on GitHub</a>
+        <a href="https://github.com/catherine-philips/Bank-Marketing" target="_blank" class="project-github">↗ GitHub</a>
       </div>
       <div class="project-card academic">
         <div class="project-num">03</div>
-        <div class="project-title">HR Analytics: Employee Churn Prediction</div>
-        <div class="project-desc">Predicted employee attrition on a 15,000-record HR dataset using Logistic Regression, KNN, and Random Forest. Identified key churn drivers and proposed data-backed retention strategies.</div>
+        <div class="project-title">HR Analytics: Churn Prediction</div>
+        <div class="project-desc">Employee attrition prediction on 15,000-record HR dataset with key driver analysis.</div>
         <div class="project-tags">
-          <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span class="project-tag">HR Analytics</span>
+          <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span>
         </div>
-        <a href="https://github.com/catherine-philips/HR-Analytics" target="_blank" class="project-github">↗ View on GitHub</a>
+        <a href="https://github.com/catherine-philips/HR-Analytics" target="_blank" class="project-github">↗ GitHub</a>
       </div>
     </div>
   </div>
+
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
-  <div class="section-label">05 — Education</div>
+<section id="education" style="background:var(--black2);">
+  <div class="section-label">04 — Education</div>
   <h2 class="section-title">Academic<br><em>Background</em></h2>
   <div class="edu-grid">
     <div class="edu-card">
@@ -582,8 +567,8 @@
 </section>
 
 <!-- CERTIFICATIONS -->
-<section id="certifications" style="background:var(--black2);">
-  <div class="section-label">06 — Certifications</div>
+<section id="certifications" style="background:var(--black);">
+  <div class="section-label">05 — Certifications</div>
   <h2 class="section-title">Continuous<br><em>Learning</em></h2>
   <div class="cert-list">
     <div class="cert-item">Google Data Analytics Professional Certificate</div>
@@ -595,12 +580,12 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">07 — Contact</div>
-  <h2 class="section-title">Let's Build<br><em>Something</em></h2>
+<section id="contact" style="background:var(--black2);">
+  <div class="section-label">06 — Contact</div>
+  <h2 class="section-title">Let's<br><em>Connect</em></h2>
   <div class="contact-wrapper">
     <div class="contact-info">
-      <p>Open to data science, AI/ML, and product analytics roles in Chennai and Bangalore. If you're building something that needs someone who can think in both business problems and AI systems — let's talk.</p>
+      <p>Looking for product company roles in Chennai, Bangalore, and Hyderabad. AI engineering, data science, or product analytics. I value sustainable pace and real ownership. I build fast using modern AI tools — Claude, ChatGPT, Cursor AI. If you're building real AI products and need someone who can drive from requirements to shipped systems — get in touch.</p>
       <div class="contact-links">
         <a href="#" id="email-link" class="contact-link">
           <span class="contact-link-label">Email</span><span id="email-text"></span>
@@ -617,16 +602,16 @@
       </div>
     </div>
     <div>
-      <div class="section-label" style="margin-bottom:1.5rem">Currently Based In</div>
+      <div class="section-label" style="margin-bottom:1.5rem">Based In</div>
       <p style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; line-height:1.2; margin-bottom:2rem">Chennai,<br><span style="color:var(--wine-light);font-style:italic">India</span></p>
-      <p style="font-size:0.78rem; line-height:2; color:var(--mid-gray)">Open to opportunities in Chennai and Bangalore. Available to connect for the right role.</p>
+      <p style="font-size:0.78rem; line-height:2; color:var(--mid-gray);">Open to opportunities in Chennai, Bangalore, and Hyderabad. Available to connect for the right role.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-name">Catherine Mariana Philips</div>
-  <p>Applied AI Engineer · AI Systems · Chennai, India</p>
+  <p>Applied AI Engineer · Data Science · Chennai, India</p>
 </footer>
 
 <script>
